@@ -5,58 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Publications — Jane Doe</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23fff'/><rect x='1' y='1' width='2' height='14' fill='%23000'/><rect x='1' y='1' width='5' height='2' fill='%23000'/><rect x='1' y='13' width='5' height='2' fill='%23000'/><rect x='13' y='1' width='2' height='14' fill='%23000'/><rect x='10' y='1' width='5' height='2' fill='%23000'/><rect x='10' y='13' width='5' height='2' fill='%23000'/></svg>" />
 </head>
 <body>
-  <div id="header-placeholder"></div>
+<script src="./nav.js"></script>
+<hr class="rule" />
 
-  <div class="pub-wrap">
-    <div class="pub-grid">
-      <h2>Journal Articles</h2>
-      <div class="pub-list">
-        <div class="article-card">
-          <div class="article-content">
-            <h2 class="article-title"><a href="#">Mapping Memory: Landscapes in Transition</a></h2>
-            <p class="journal-name">Southern Literary Review</p>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-content">
-            <h2 class="article-title"><a href="#">Fragments of a Forgotten City</a></h2>
-            <p class="journal-name">Urban Essays Quarterly</p>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-content">
-            <h2 class="article-title"><a href="#">The Ethics of Remembering</a></h2>
-            <p class="journal-name">The Memory Studies Journal</p>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-content">
-            <h2 class="article-title"><a href="#">Ghosts in the Archive</a></h2>
-            <p class="journal-name">Historical Perspectives</p>
-          </div>
-        </div>
+  <div class="table-wrap">
+    <section class="table-section" id="publications">
+      <div class="table-header">
+        <span>[TITLE]</span>
+        <span>[FORM]</span>
+        <span>[PRESS]</span>
+        <span>[YEAR]</span>
       </div>
-    </div>
+      <hr class="section-rule" />
+      <div class="table-row">
+        <a href="#">THE&nbsp;UNSPOKEN&nbsp;YEARS</a>
+        <span>NOVEL</span>
+        <span>TEXT&nbsp;PUBLISHING</span>
+        <span class="year">2023</span>
+      </div>
+      <div class="table-row">
+        <a href="#">SALTWATER&nbsp;DREAMS</a>
+        <span>NOVEL</span>
+        <span>ALLEN&nbsp;&amp;&nbsp;UNWIN</span>
+        <span class="year">2021</span>
+      </div>
+      <div class="table-row">
+        <a href="#">PIECES&nbsp;OF&nbsp;THE&nbsp;SKY</a>
+        <span>NOVEL</span>
+        <span>SCRIBE</span>
+        <span class="year">2019</span>
+      </div>
+      <div class="table-row">
+        <a href="#">MAPPING&nbsp;MEMORY:&nbsp;LANDSCAPES&nbsp;IN&nbsp;TRANSITION</a>
+        <span>ESSAY</span>
+        <span>SOUTHERN&nbsp;LITERARY&nbsp;REVIEW</span>
+        <span class="year">2022</span>
+      </div>
+      <div class="table-row">
+        <a href="#">FRAGMENTS&nbsp;OF&nbsp;A&nbsp;FORGOTTEN&nbsp;CITY</a>
+        <span>ESSAY</span>
+        <span>URBAN&nbsp;ESSAYS&nbsp;QUARTERLY</span>
+        <span class="year">2020</span>
+      </div>
+      <div class="table-row">
+        <a href="#">THE&nbsp;ETHICS&nbsp;OF&nbsp;REMEMBERING</a>
+        <span>ESSAY</span>
+        <span>THE&nbsp;MEMORY&nbsp;STUDIES&nbsp;JOURNAL</span>
+        <span class="year">2018</span>
+      </div>
+      <div class="table-row">
+        <a href="#">GHOSTS&nbsp;IN&nbsp;THE&nbsp;ARCHIVE</a>
+        <span>ESSAY</span>
+        <span>HISTORICAL&nbsp;PERSPECTIVES</span>
+        <span class="year">2017</span>
+      </div>
+    </section>
   </div>
 
-  <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("header-placeholder").innerHTML = html;
-        const current = location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          const linkFile = link.getAttribute('href').replace('./', '') || 'index.html';
-          if (current === linkFile || (current === '' && linkFile === 'index.html')) {
-            link.classList.add('active');
-          }
-        });
-      });
-  </script>
 </body>
 </html>

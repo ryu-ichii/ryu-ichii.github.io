@@ -1,61 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jane Doe</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div id="header-placeholder"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jane Doe</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23fff'/><rect x='1' y='1' width='2' height='14' fill='%23000'/><rect x='1' y='1' width='5' height='2' fill='%23000'/><rect x='1' y='13' width='5' height='2' fill='%23000'/><rect x='13' y='1' width='2' height='14' fill='%23000'/><rect x='10' y='1' width='5' height='2' fill='%23000'/><rect x='10' y='13' width='5' height='2' fill='%23000'/></svg>" />
+</head>
+<body>
+<script src="./nav.js"></script>
+<hr class="rule" />
 
-    <div class="grid">
-      <section>
-        <p class="intro">Jane Doe writes award-winning fiction and nonfiction that explores memory, place, and the human condition. Her work has been published in international journals and anthologies across the globe.</p>
-      </section>
+  <div class="table-wrap">
 
-      <section>
-        <h2>Publications</h2>
-        <ul>
-          <li><a href="#">The Unspoken Years</a><span>2023</span></li>
-          <li><a href="#">Saltwater Dreams</a><span>2021</span></li>
-          <li><a href="#">Pieces of the Sky</a><span>2019</span></li>
-          <li class="see-more"><a href="./publications.html">See more &rarr;</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Awards</h2>
-        <ul>
-          <li><a href="#">Miles Franklin Literary Award</a><span>Finalist, 2023</span></li>
-          <li><a href="#">Victorian Premier&rsquo;s Literary Award</a><span>Winner, 2021</span></li>
-          <li><a href="#">Pushcart Prize Nomination</a><span>2020</span></li>
-        </ul>
-      </section>
-    </div>
-
-    <footer class="bottom-bar">
-      <div>
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:jane.doe@example.com">jane.doe@example.com</a></p>
-        <p>Representation: <a href="#">XYZ Literary Agency</a></p>
-        <p><a href="https://instagram.com/janedoe">Instagram</a>, <a href="https://linkedin.com/in/janedoe">LinkedIn</a>, <a href="https://github.com/janedoe">GitHub</a></p>
+    <section class="table-section single" id="bio">
+      <div class="table-header">
+        <span>[ABSTRACT]</span>
       </div>
-    </footer>
+      <hr class="section-rule" />
+      <div class="about-text">
+        <p>Jane Doe writes award-winning fiction and nonfiction that explores memory, place, and the human condition. Her work has been published in international journals and anthologies across the globe.</p>
+      </div>
+    </section>
 
-    <script>
-      fetch("header.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("header-placeholder").innerHTML = html;
-          const current = location.pathname.split('/').pop() || 'index.html';
-          document.querySelectorAll('.nav-links a').forEach(link => {
-            const linkFile = link.getAttribute('href').replace('./', '') || 'index.html';
-            if (current === linkFile || (current === '' && linkFile === 'index.html')) {
-              link.classList.add('active');
-            }
-          });
-        });
-    </script>
-  </body>
+    <section class="table-section" id="books">
+      <div class="table-header">
+        <span>[TITLE]</span>
+        <span>[FORM]</span>
+        <span>[PRESS]</span>
+        <span>[YEAR]</span>
+      </div>
+      <hr class="section-rule" />
+      <div class="table-row">
+        <a href="#">THE&nbsp;UNSPOKEN&nbsp;YEARS</a>
+        <span>NOVEL</span>
+        <span>TEXT&nbsp;PUBLISHING</span>
+        <span class="year">2023</span>
+      </div>
+      <div class="table-row">
+        <a href="#">SALTWATER&nbsp;DREAMS</a>
+        <span>NOVEL</span>
+        <span>ALLEN&nbsp;&amp;&nbsp;UNWIN</span>
+        <span class="year">2021</span>
+      </div>
+      <div class="table-row">
+        <a href="#">PIECES&nbsp;OF&nbsp;THE&nbsp;SKY</a>
+        <span>NOVEL</span>
+        <span>SCRIBE</span>
+        <span class="year">2019</span>
+      </div>
+      <div class="table-row see-more">
+        <a href="./publications.html">SEE&nbsp;MORE&nbsp;&rarr;</a>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="table-section" id="awards">
+      <div class="table-header">
+        <span>[AWARD]</span>
+        <span>[YEAR]</span>
+      </div>
+      <hr class="section-rule" />
+      <div class="table-row">
+        <a href="#">MILES&nbsp;FRANKLIN&nbsp;LITERARY&nbsp;AWARD</a>
+        <span class="year">2023</span>
+      </div>
+      <div class="table-row">
+        <a href="#">VICTORIAN&nbsp;PREMIER&rsquo;S&nbsp;LITERARY&nbsp;AWARD</a>
+        <span class="year">2021</span>
+      </div>
+      <div class="table-row">
+        <a href="#">PUSHCART&nbsp;PRIZE&nbsp;NOMINATION</a>
+        <span class="year">2020</span>
+      </div>
+    </section>
+
+    <section class="table-section single" id="contact">
+      <div class="table-header">
+        <span>[CONTACT]</span>
+      </div>
+      <hr class="section-rule" />
+      <div class="table-row">
+        <a href="mailto:jane.doe@example.com">JANE.DOE@EXAMPLE.COM</a>
+      </div>
+      <div class="table-row">
+        <a href="#">XYZ&nbsp;LITERARY&nbsp;AGENCY</a>
+      </div>
+      <hr class="section-rule contact-divider" />
+      <div class="table-row">
+        <a href="https://instagram.com/janedoe">INSTAGRAM</a>
+      </div>
+      <div class="table-row">
+        <a href="https://linkedin.com/in/janedoe">LINKEDIN</a>
+      </div>
+      <div class="table-row">
+        <a href="https://github.com/janedoe">GITHUB</a>
+      </div>
+    </section>
+
+  </div>
+
+</body>
 </html>
