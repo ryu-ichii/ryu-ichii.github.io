@@ -3,95 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- import fonts here -->
-
-    <title>Author Website</title>
+    <title>Jane Doe</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  
   <body>
-      <!-- menu header -->
     <div id="header-placeholder"></div>
-    <!-- load header -->
+
+    <div class="grid">
+      <section>
+        <p class="intro">Jane Doe writes award-winning fiction and nonfiction that explores memory, place, and the human condition. Her work has been published in international journals and anthologies across the globe.</p>
+      </section>
+
+      <section>
+        <h2>Publications</h2>
+        <ul>
+          <li><a href="#">The Unspoken Years</a><span>2023</span></li>
+          <li><a href="#">Saltwater Dreams</a><span>2021</span></li>
+          <li><a href="#">Pieces of the Sky</a><span>2019</span></li>
+          <li class="see-more"><a href="./publications.html">See more &rarr;</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Awards</h2>
+        <ul>
+          <li><a href="#">Miles Franklin Literary Award</a><span>Finalist, 2023</span></li>
+          <li><a href="#">Victorian Premier&rsquo;s Literary Award</a><span>Winner, 2021</span></li>
+          <li><a href="#">Pushcart Prize Nomination</a><span>2020</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="bottom-bar">
+      <div>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:jane.doe@example.com">jane.doe@example.com</a></p>
+        <p>Representation: <a href="#">XYZ Literary Agency</a></p>
+        <p><a href="https://instagram.com/janedoe">Instagram</a>, <a href="https://linkedin.com/in/janedoe">LinkedIn</a>, <a href="https://github.com/janedoe">GitHub</a></p>
+      </div>
+    </footer>
+
     <script>
       fetch("header.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("header-placeholder").innerHTML = html;
+          const current = location.pathname.split('/').pop() || 'index.html';
+          document.querySelectorAll('.nav-links a').forEach(link => {
+            const linkFile = link.getAttribute('href').replace('./', '') || 'index.html';
+            if (current === linkFile || (current === '' && linkFile === 'index.html')) {
+              link.classList.add('active');
+            }
+          });
         });
     </script>
-
-    <div class="container">
-      <header>
-        <!-- edit author headshot below -->
-        <img
-          src="./img/headshot.jpg"
-          alt="Author Headshot"
-        />
-        <h1>Jane Doe</h1>
-        <p>Author | Artist | Speaker</p>
-      </header>
-
-      <section class="bio">
-        <!-- edit author bio below -->
-        <p>
-          Jane Doe is an award-winning author of fiction and nonfiction, known
-          for her evocative storytelling and deep engagement with the human
-          condition. Her work has been published in numerous international
-          journals and anthologies.
-        </p>
-        <p>
-          With a background in journalism and literature, Jane blends research
-          with creativity to produce compelling narratives. She is passionate
-          about mentoring emerging writers and often appears at festivals and
-          workshops around the globe.
-        </p>
-      </section>
-
-      <section class="publications">
-        <h2>Publication History</h2>
-        <!-- edit author publications below, creating new list items -->
-        <ul>
-          <li><a href="#">The Unspoken Years (2023)</a></li>
-          <li><a href="#">Saltwater Dreams (2021)</a></li>
-          <li><a href="#">Pieces of the Sky (2019)</a></li>
-          <li>
-            <a href="./publications.html"
-              >Journal articles and essays (see full list)</a
-            >
-          </li>
-        </ul>
-      </section>
-
-      <section class="awards">
-        <h2>Awards and Recognition</h2>
-        <ul>
-          <li>
-            <a href="#">Miles Franklin Literary Award – Finalist (2023)</a>
-          </li>
-          <li>
-            <a href="#">Victorian Premier's Literary Award – Winner (2021)</a>
-          </li>
-          <li><a href="#">Pushcart Prize Nomination (2020)</a></li>
-        </ul>
-      </section>
-
-      <section class="contact">
-        <h2>Contact</h2>
-        <p>
-          Email: <a href="mailto:jane.doe@example.com">jane.doe@example.com</a>
-        </p>
-        <p>Representation: <a href="#">XYZ Literary Agency</a></p>
-      </section>
-
-      <section class="socials">
-        <h2>Follow</h2>
-        <p>
-          <a href="https://twitter.com/janedoe">Twitter</a> |
-          <a href="https://instagram.com/janedoe">Instagram</a> |
-          <a href="https://linkedin.com/in/janedoe">LinkedIn</a>
-        </p>
-      </section>
-    </div>
   </body>
 </html>

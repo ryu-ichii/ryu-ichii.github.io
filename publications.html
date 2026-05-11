@@ -3,56 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Journal Articles</title>
-   <link rel="stylesheet" href="./style.css" />
+  <title>Publications — Jane Doe</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- menu header -->
-<div id="header-placeholder"></div>
-<!-- load header -->
-<script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("header-placeholder").innerHTML = html;
-    });
-</script>
-  
-  <div class="container2">
-    <h1>Journal Articles</h1>
-    <div class="article-grid">
-      <div class="article-card">
-        <img class="article-image" src="https://cdn.glitch.global/7004fb2b-210d-464f-acbf-cc930f15cb46/headshot.jpg?v=1746156781259" alt="Article Image" />
-        <div class="article-content">
-          <h2 class="article-title"><a href="#">Mapping Memory: Landscapes in Transition</a></h2>
-          <p class="journal-name">Southern Literary Review</p>
-        </div>
-      </div>
+  <div id="header-placeholder"></div>
 
-      <div class="article-card">
-        <img class="article-image" src="https://cdn.glitch.global/7004fb2b-210d-464f-acbf-cc930f15cb46/headshot.jpg?v=1746156781259" alt="Article Image" />
-        <div class="article-content">
-          <h2 class="article-title"><a href="#">Fragments of a Forgotten City</a></h2>
-          <p class="journal-name">Urban Essays Quarterly</p>
+  <div class="pub-wrap">
+    <div class="pub-grid">
+      <h2>Journal Articles</h2>
+      <div class="pub-list">
+        <div class="article-card">
+          <div class="article-content">
+            <h2 class="article-title"><a href="#">Mapping Memory: Landscapes in Transition</a></h2>
+            <p class="journal-name">Southern Literary Review</p>
+          </div>
         </div>
-      </div>
 
-      <div class="article-card">
-        <img class="article-image" src="https://cdn.glitch.global/7004fb2b-210d-464f-acbf-cc930f15cb46/headshot.jpg?v=1746156781259" alt="Article Image" />
-        <div class="article-content">
-          <h2 class="article-title"><a href="#">The Ethics of Remembering</a></h2>
-          <p class="journal-name">The Memory Studies Journal</p>
+        <div class="article-card">
+          <div class="article-content">
+            <h2 class="article-title"><a href="#">Fragments of a Forgotten City</a></h2>
+            <p class="journal-name">Urban Essays Quarterly</p>
+          </div>
         </div>
-      </div>
 
-      <div class="article-card">
-        <img class="article-image" src="https://cdn.glitch.global/7004fb2b-210d-464f-acbf-cc930f15cb46/headshot.jpg?v=1746156781259" alt="Article Image" />
-        <div class="article-content">
-          <h2 class="article-title"><a href="#">Ghosts in the Archive</a></h2>
-          <p class="journal-name">Historical Perspectives</p>
+        <div class="article-card">
+          <div class="article-content">
+            <h2 class="article-title"><a href="#">The Ethics of Remembering</a></h2>
+            <p class="journal-name">The Memory Studies Journal</p>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-content">
+            <h2 class="article-title"><a href="#">Ghosts in the Archive</a></h2>
+            <p class="journal-name">Historical Perspectives</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          const linkFile = link.getAttribute('href').replace('./', '') || 'index.html';
+          if (current === linkFile || (current === '' && linkFile === 'index.html')) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
 </body>
 </html>

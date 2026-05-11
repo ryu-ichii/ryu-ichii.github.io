@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Jane Doe</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <div class="about-wrap">
+    <div class="about-grid">
+      <h2>About</h2>
+      <div class="about-text">
+        <p>Jane Doe is an award-winning author of fiction and nonfiction based in Melbourne, Australia. Her writing explores the intersection of memory, landscape, and identity — asking how the places we inhabit shape the stories we tell about ourselves.</p>
+        <p>Her debut novel, <em>The Unspoken Years</em>, was published in 2023 to critical acclaim, shortlisted for the Miles Franklin Literary Award and named a book of the year by several national publications. Her second novel, <em>Saltwater Dreams</em>, followed in 2021, cementing her reputation as one of the most distinctive voices in contemporary Australian fiction.</p>
+        <p>Alongside her novels, Jane has written extensively for journals and literary magazines, contributing essays and criticism to publications including the Southern Literary Review, Urban Essays Quarterly, and The Memory Studies Journal. Her nonfiction interrogates the ethics of remembering — how we archive the past, whose stories are preserved, and what is lost in the telling.</p>
+        <p>Jane holds a doctorate in creative writing from the University of Melbourne and has held residencies in Ireland, Portugal, and regional Australia. She teaches writing at the postgraduate level and regularly speaks at literary festivals across the country.</p>
+        <p>She is represented by XYZ Literary Agency. For speaking engagements, rights enquiries, or press, contact <a href="mailto:jane.doe@example.com">jane.doe@example.com</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          const linkFile = link.getAttribute('href').replace('./', '') || 'index.html';
+          if (current === linkFile || (current === '' && linkFile === 'index.html')) {
+            link.classList.add('active');
+          }
+        });
+      });
+  </script>
+</body>
+</html>
