@@ -2,24 +2,25 @@
   var nav = document.createElement('nav');
   nav.className = 'topnav';
   nav.setAttribute('aria-label', 'Primary');
-  nav.innerHTML =
-    '<div class="nav-meta">' +
-      '<div class="nav-col">' +
-        '<span>[JANE&nbsp;DOE]</span>' +
-        '<span>[WRITER]</span>' +
-        '<span>[MELBOURNE]</span>' +
-      '</div>' +
-      '<div class="nav-col">' +
-        '<span>[FICTION]</span>' +
-        '<span>[NONFICTION]</span>' +
-        '<span>[POETRY]</span>' +
-      '</div>' +
-    '</div>' +
-    '<div class="nav-links">' +
-      '<a href="./index.html" class="nav-link">[HOME]</a>' +
-      '<a href="./about.html" class="nav-link">[ABOUT]</a>' +
-      '<a href="./publications.html" class="nav-link">[PUBLICATIONS]</a>' +
-    '</div>';
+  nav.innerHTML = `
+    <div class="nav-meta">
+      <div class="nav-col">
+        <span>[JANE&nbsp;DOE]</span>
+        <span>[WRITER]</span>
+        <span>[MELBOURNE]</span>
+      </div>
+      <div class="nav-col">
+        <span>[FICTION]</span>
+        <span>[NONFICTION]</span>
+        <span>[POETRY]</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="./index.html" class="nav-link">[HOME]</a></div>
+      <div class="nav-item"><a href="./about.html" class="nav-link">[ABOUT]</a></div>
+      <div class="nav-item"><a href="./publications.html" class="nav-link">[PUBLICATIONS]</a></div>
+      <div class="mode-wrap"><span class="mode-toggle">[DARK]</span></div>
+    </div>`;
 
   document.currentScript.parentNode.insertBefore(nav, document.currentScript);
 
@@ -27,7 +28,19 @@
   nav.querySelectorAll('.nav-link').forEach(function (link) {
     var href = link.getAttribute('href').replace('./', '');
     if (current === href || (current === '' && href === 'index.html')) {
-      link.classList.add('active');
+      link.parentElement.classList.add('active');
     }
+  });
+
+  var toggle = nav.querySelector('.mode-toggle');
+  function applyMode(dark) {
+    document.body.classList.toggle('dark', dark);
+    toggle.textContent = dark ? '[LIGHT]' : '[DARK]';
+  }
+  applyMode(localStorage.getItem('mode') === 'dark');
+  toggle.addEventListener('click', function () {
+    var isDark = !document.body.classList.contains('dark');
+    localStorage.setItem('mode', isDark ? 'dark' : 'light');
+    applyMode(isDark);
   });
 }());
