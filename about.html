@@ -4,12 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Jane Doe</title>
+  <meta name="description" content="About Jane Doe — writer of fiction, nonfiction, and poetry based in Melbourne, Australia." />
+  <meta property="og:title" content="About — Jane Doe" />
+  <meta property="og:description" content="Writer of fiction, nonfiction, and poetry based in Melbourne, Australia." />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="./style.css" />
   <link href="https://fonts.cdnfonts.com/css/prestige-elite-std" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23fff'/><rect x='1' y='1' width='2' height='14' fill='%23000'/><rect x='1' y='1' width='5' height='2' fill='%23000'/><rect x='1' y='13' width='5' height='2' fill='%23000'/><rect x='13' y='1' width='2' height='14' fill='%23000'/><rect x='10' y='1' width='5' height='2' fill='%23000'/><rect x='10' y='13' width='5' height='2' fill='%23000'/></svg>" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 </head>
 <body>
 <script src="./nav.js"></script>
+<noscript>
+  <nav class="topnav">
+    <div class="nav-links">
+      <a href="./index.html">[HOME]</a>
+      <a href="./about.html">[ABOUT]</a>
+      <a href="./publications.html">[PUBLICATIONS]</a>
+    </div>
+  </nav>
+</noscript>
 <hr class="rule" />
 
   <div class="about-wrap">
@@ -25,6 +38,21 @@
     </div>
   </div>
 
+<noscript>
+  <hr class="rule" />
+  <div class="table-wrap">
+    <section class="table-section single" id="contact">
+      <div class="table-header"><span>[CONTACT]</span></div>
+      <div class="contact-rows">
+        <div class="table-row"><a href="mailto:jane.doe@example.com">[JANE.DOE@EXAMPLE.COM]</a></div>
+        <div class="table-row"><a href="#">[XYZ&nbsp;LITERARY&nbsp;AGENCY]</a></div>
+        <div class="table-row"><a href="https://instagram.com/janedoe">[INSTAGRAM]</a></div>
+        <div class="table-row"><a href="https://linkedin.com/in/janedoe">[LINKEDIN]</a></div>
+        <div class="table-row"><a href="https://github.com/janedoe">[GITHUB]</a></div>
+      </div>
+    </section>
+  </div>
+</noscript>
 <script src="./footer.js"></script>
 </body>
 </html>

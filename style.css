@@ -21,9 +21,9 @@ body {
   color: var(--text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.about-text p,
 .pub-row,
 .table-row {
   text-align: justify;
@@ -187,7 +187,7 @@ em { font-style: italic; }
 
 .bio-content {
   display: flex;
-  gap: clamp(140px, 25vw, 400px);
+  gap: clamp(60px, 8vw, 180px);
   align-items: flex-start;
 }
 .bio-art {
@@ -208,7 +208,7 @@ em { font-style: italic; }
   letter-spacing: inherit;
   text-align: justify;
   text-justify: inter-word;
-  word-spacing: 0.5em;
+  word-spacing: 0.2em;
   hyphens: none;
 }
 .about-text p:last-child { margin-bottom: 0; }

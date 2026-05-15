@@ -37,7 +37,8 @@
     document.body.classList.toggle('dark', dark);
     toggle.textContent = dark ? '[LIGHT]' : '[DARK]';
   }
-  applyMode(localStorage.getItem('mode') === 'dark');
+  var savedMode = localStorage.getItem('mode');
+  applyMode(savedMode ? savedMode === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
   toggle.addEventListener('click', function () {
     var isDark = !document.body.classList.contains('dark');
     localStorage.setItem('mode', isDark ? 'dark' : 'light');
