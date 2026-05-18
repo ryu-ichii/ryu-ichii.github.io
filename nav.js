@@ -5,7 +5,7 @@
   nav.innerHTML = `
     <div class="nav-meta">
       <div class="nav-col">
-        <span>[RYU&nbsp;KONRAD]</span>
+        <span>[RYU KONRAD]</span>
         <span>[WRITER]</span>
         <span>[MELBOURNE]</span>
       </div>

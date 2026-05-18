@@ -12,9 +12,9 @@
       <div class="contact-layout">
         <div class="contact-rows">
           <div class="table-row"><a href="mailto:s4108334@student.rmit.edu.au">[S4108334@STUDENT.RMIT.EDU.AU]</a></div>
-          <div class="table-row"><a href="https://www.rmit.edu.au">[RMIT&nbsp;UNIVERSITY]</a></div>
-          <div class="table-row"><a href="https://instagram.com/janedoe">[INSTAGRAM]</a></div>
-          <div class="table-row"><a href="https://linkedin.com/in/janedoe">[LINKEDIN]</a></div>
+          <div class="table-row"><a href="https://www.rmit.edu.au">[RMIT UNIVERSITY]</a></div>
+          <div class="table-row"><a href="https://www.instagram.com/ryu___ske/">[INSTAGRAM]</a></div>
+          <div class="table-row"><a href="https://www.linkedin.com/in/ryu-konrad">[LINKEDIN]</a></div>
           <div class="table-row"><a href="https://github.com/ryu-ichii">[GITHUB]</a></div>
         </div>
         <div class="contact-arts">
