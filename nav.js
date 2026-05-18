@@ -6,20 +6,17 @@
     <div class="nav-meta">
       <div class="nav-col">
         <span>[RYU KONRAD]</span>
-        <span>[WRITER]</span>
+        <span>[PROSE/POETRY]</span>
         <span>[MELBOURNE]</span>
-      </div>
-      <div class="nav-col">
-        <span>[FICTION]</span>
-        <span>[NONFICTION]</span>
-        <span>[POETRY]</span>
       </div>
     </div>
     <div class="nav-links">
-      <div class="nav-item"><a href="./index.html" class="nav-link">[HOME]</a></div>
-      <div class="nav-item"><a href="./about.html" class="nav-link">[ABOUT]</a></div>
-      <div class="nav-item"><a href="./publications.html" class="nav-link">[PUBLICATIONS]</a></div>
-      <div class="mode-wrap"><span class="mode-toggle">[DARK]</span></div>
+      <div class="nav-items">
+        <div class="nav-item"><a href="./index.html" class="nav-link">[HOME]</a></div>
+        <div class="nav-item"><a href="./publications.html" class="nav-link">[WORKS]</a></div>
+        <div class="nav-item"><a href="./about.html" class="nav-link">[ABOUT]</a></div>
+      </div>
+      <div class="mode-clip"><div class="mode-wrap"><span class="mode-toggle">[DARK]</span></div></div>
     </div>`;
 
   document.currentScript.parentNode.insertBefore(nav, document.currentScript);
