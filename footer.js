@@ -11,10 +11,10 @@
       <div class="contact-layout">
         <div class="contact-rows">
           <div class="table-row"><a href="#" class="copy-email">[S4108334@STUDENT.RMIT.EDU.AU]</a></div>
-          <div class="table-row"><a href="https://www.rmit.edu.au">[RMIT UNIVERSITY]</a></div>
-          <div class="table-row"><a href="https://www.instagram.com/ryu___ske/">[INSTAGRAM]</a></div>
-          <div class="table-row"><a href="https://www.linkedin.com/in/ryu-konrad">[LINKEDIN]</a></div>
-          <div class="table-row"><a href="https://github.com/ryu-ichii">[GITHUB]</a></div>
+          <div class="table-row"><a href="https://www.rmit.edu.au" rel="noopener noreferrer">[RMIT UNIVERSITY]</a></div>
+          <div class="table-row"><a href="https://www.instagram.com/ryu___ske/" rel="noopener noreferrer">[INSTAGRAM]</a></div>
+          <div class="table-row"><a href="https://www.linkedin.com/in/ryu-konrad" rel="noopener noreferrer">[LINKEDIN]</a></div>
+          <div class="table-row"><a href="https://github.com/ryu-ichii" rel="noopener noreferrer">[GITHUB]</a></div>
         </div>
         <div class="contact-arts">
           <div class="rmit-wrap">
@@ -36,11 +36,17 @@
   var emailLink = wrap.querySelector('.copy-email');
   emailLink.addEventListener('click', function (e) {
     e.preventDefault();
-    navigator.clipboard.writeText('s4108334@student.rmit.edu.au').then(function () {
-      var orig = emailLink.textContent;
-      emailLink.textContent = '[COPIED]';
-      setTimeout(function () { emailLink.textContent = orig; }, 1500);
-    });
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText('s4108334@student.rmit.edu.au').then(function () {
+        var orig = emailLink.textContent;
+        emailLink.textContent = '[COPIED]';
+        setTimeout(function () { emailLink.textContent = orig; }, 1500);
+      }).catch(function () {
+        window.location.href = 'mailto:s4108334@student.rmit.edu.au';
+      });
+    } else {
+      window.location.href = 'mailto:s4108334@student.rmit.edu.au';
+    }
   });
 
   /* ── ASCII art icons ── */
@@ -115,29 +121,48 @@
     'wJJJJJJJJJJJJJJJJJJJJJJJJm\n' +
     ' bkkkkkkkkkkkkkkkkkkkkkka'
   );
-  
-    wrap.querySelector('.github-art').textContent = pixelate(
-      '              ZpdddpZ              \n' +
-      '          ph###########hq          \n' +
-      '        a#################b        \n' +
-      '      p#####################m      \n' +
-      '     o###ho############*oh###a     \n' +
-      '    h####    abpmOmpba    ####o    \n' +
-      '   d#####                 #####p   \n' +
-      '   ######                 ######   \n' +
-      '  p#####                  O#####O  \n' +
-      '  o####h                   *####a  \n' +
-      '  h####o                   h####o  \n' +
-      '  h####*                   #####o  \n' +
-      '  b#####                  O#####d  \n' +
-      '   #####*                 ######   \n' +
-      '   h##**##b             a######o   \n' +
-      '    ##h  *###h       *#########    \n' +
-      '     ###  a**a       *########     \n' +
-      '      *#*            h######h      \n' +
-      '       b##haak       h#####d       \n' +
-      '         b*##o       h##*d         \n' +
-      '            q        Jq'
-    );
+
+  wrap.querySelector('.github-art').textContent = pixelate(
+    '              ZpdddpZ              \n' +
+    '          ph###########hq          \n' +
+    '        a#################b        \n' +
+    '      p#####################m      \n' +
+    '     o###ho############*oh###a     \n' +
+    '    h####    abpmOmpba    ####o    \n' +
+    '   d#####                 #####p   \n' +
+    '   ######                 ######   \n' +
+    '  p#####                  O#####O  \n' +
+    '  o####h                   *####a  \n' +
+    '  h####o                   h####o  \n' +
+    '  h####*                   #####o  \n' +
+    '  b#####                  O#####d  \n' +
+    '   #####*                 ######   \n' +
+    '   h##**##b             a######o   \n' +
+    '    ##h  *###h       *#########    \n' +
+    '     ###  a**a       *########     \n' +
+    '      *#*            h######h      \n' +
+    '       b##haak       h#####d       \n' +
+    '         b*##o       h##*d         \n' +
+    '            q        Jq'
+  );
+
+  wrap.querySelectorAll('.contact-art').forEach(function (el) {
+    el.setAttribute('aria-hidden', 'true');
+  });
+
+  /* ── Whole-row click ── */
+  document.querySelectorAll('.table-row').forEach(function (row) {
+    var link = row.querySelector('a');
+    if (!link || link.classList.contains('copy-email')) return;
+    row.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') return;
+      var isExternal = link.hostname && link.hostname !== location.hostname;
+      if (isExternal) {
+        window.open(link.href, '_blank', 'noopener,noreferrer');
+      } else {
+        window.location.href = link.href;
+      }
+    });
+  });
 
 })();

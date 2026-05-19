@@ -16,7 +16,7 @@
         <div class="nav-item"><a href="./publications.html" class="nav-link">[WORKS]</a></div>
         <div class="nav-item"><a href="./about.html" class="nav-link">[ABOUT]</a></div>
       </div>
-      <div class="mode-clip"><div class="mode-wrap"><span class="mode-toggle">[DARK]</span></div></div>
+      <div class="mode-clip"><div class="mode-wrap" role="button" tabindex="0"><span class="mode-toggle">[DARK]</span></div></div>
     </div>`;
 
   document.currentScript.parentNode.insertBefore(nav, document.currentScript);
@@ -36,9 +36,14 @@
   }
   var savedMode = localStorage.getItem('mode');
   applyMode(savedMode ? savedMode === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
-  toggle.addEventListener('click', function () {
+  var modeWrap = nav.querySelector('.mode-wrap');
+  function toggleMode() {
     var isDark = !document.body.classList.contains('dark');
     localStorage.setItem('mode', isDark ? 'dark' : 'light');
     applyMode(isDark);
+  }
+  modeWrap.addEventListener('click', toggleMode);
+  modeWrap.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMode(); }
   });
 }());
