@@ -6,7 +6,8 @@
     <div class="nav-meta">
       <div class="nav-col">
         <span>[RYU KONRAD]</span>
-        <span>[PROSE/POETRY]</span>
+        <span>[PROSE]</span>
+        <span>[POETRY]</span>
         <span>[MELBOURNE]</span>
       </div>
     </div>
@@ -15,8 +16,8 @@
         <div class="nav-item"><a href="./index.html" class="nav-link">[HOME]</a></div>
         <div class="nav-item"><a href="./publications.html" class="nav-link">[WORKS]</a></div>
         <div class="nav-item"><a href="./about.html" class="nav-link">[ABOUT]</a></div>
+        <div class="nav-item mode-wrap" role="button" tabindex="0"><span class="mode-toggle">[DARK]</span></div>
       </div>
-      <div class="mode-clip"><div class="mode-wrap" role="button" tabindex="0"><span class="mode-toggle">[DARK]</span></div></div>
     </div>`;
 
   document.currentScript.parentNode.insertBefore(nav, document.currentScript);
