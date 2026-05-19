@@ -1,9 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <rect width="16" height="16" fill="#fff"/>
-  <rect x="1" y="1" width="2" height="14" fill="#000"/>
-  <rect x="1" y="1" width="5" height="2" fill="#000"/>
-  <rect x="1" y="13" width="5" height="2" fill="#000"/>
-  <rect x="13" y="1" width="2" height="14" fill="#000"/>
-  <rect x="10" y="1" width="5" height="2" fill="#000"/>
-  <rect x="10" y="13" width="5" height="2" fill="#000"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <style>
+    .bg{fill:#fff}
+    .t{fill:#000}
+    @media(prefers-color-scheme:dark){.bg{fill:#111}.t{fill:#f0f0f0}}
+  </style>
+  <rect class="bg" width="30" height="30"/>
+  <text class="t" xml:space="preserve" x="0" y="12.5" font-family="'Courier New',Courier,monospace" font-size="1.4">oo oooooo  oooo   oooo oooo  oooo</text>
+  <text class="t" xml:space="preserve" x="0" y="14" font-family="'Courier New',Courier,monospace" font-size="1.4"> 888    888 888   888   888   888</text>
+  <text class="t" xml:space="preserve" x="0" y="15.5" font-family="'Courier New',Courier,monospace" font-size="1.4"> 888         888 888    888   888</text>
+  <text class="t" xml:space="preserve" x="0" y="17" font-family="'Courier New',Courier,monospace" font-size="1.4">o888o          8888      888o88 8o</text>
+  <text class="t" xml:space="preserve" x="0" y="18.5" font-family="'Courier New',Courier,monospace" font-size="1.4">            o8o888</text>
 </svg>

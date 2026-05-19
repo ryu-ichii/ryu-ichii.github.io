@@ -160,7 +160,7 @@ em { font-style: italic; }
 .contact-arts {
   display: flex;
   align-items: flex-start;
-  gap: clamp(12px, 2vw, 32px);
+  gap: 20px;
   position: relative;
   top: clamp(24px, 4vw, 48px);
 }
@@ -189,14 +189,15 @@ em { font-style: italic; }
   color: var(--text);
 }
 .linkedin-art {
-  font-size: 1.6px;
+  font-size: 5.5px;
 }
 .contact-art.github-art {
-  font-size: 1.8px;
+  font-size: 5px;
   color: var(--text);
+  margin-top: -10px;
 }
 .instagram-art {
-  font-size: 2.2px;
+  font-size: 5.5px;
   background: linear-gradient(45deg, #FCAF45 0%, #F77737 20%, #F56040 35%, #E1306C 50%, #C13584 65%, #833AB4 80%, #405DE6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -219,6 +220,16 @@ em { font-style: italic; }
   letter-spacing: 0;
 }
 .about-bio-art { margin-top: 0; margin-right: clamp(40px, 8vw, 120px); }
+.bio-arts-stack {
+  flex-shrink: 0;
+  margin: 0 clamp(40px, 8vw, 120px) 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  overflow: hidden;
+}
+.bio-arts-stack .bio-art { margin: 0; }
 
 .about-text { max-width: 760px; }
 .about-text p {
@@ -240,6 +251,7 @@ em { font-style: italic; }
   .table-header, .table-row { gap: 12px; }
   .about-grid { grid-template-columns: 1fr; }
   .bio-art { display: none; }
+  .bio-arts-stack { display: none; }
 }
 @media (max-width: 560px) {
   body { font-size: 18px; }
